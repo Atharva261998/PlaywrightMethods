@@ -14,19 +14,19 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm ci'  // More reliable than 'npm install' for CI
+                bat 'npm ci'  // More reliable than 'npm install' for CI
             }
         }
 
         stage('Install Playwright Browsers') {
             steps {
-                sh 'npx playwright install'
+                bat 'npx playwright install'
             }
         }
 
         stage('Run Playwright Tests') {
             steps {
-                sh 'npx playwright test'
+                bat 'npx playwright test'
             }
         }
     }
